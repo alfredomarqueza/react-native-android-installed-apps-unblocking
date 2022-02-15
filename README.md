@@ -34,6 +34,7 @@
 #### 1 - getApps()
 #### 2 - getNonSystemApps()
 #### 3 - getSystemApps()
+#### 4 - getNonSystemAppNames()
 
 ## Return Result 
 

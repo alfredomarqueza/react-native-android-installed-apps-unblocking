@@ -12,6 +12,9 @@ module.exports = {
   getNonSystemApps(): Promise<any> {
     return RNAndroidInstalledApps.getNonSystemApps();
   },
+  getNonSystemAppNames(): Promise<any> {
+    return RNAndroidInstalledApps.getNonSystemAppNames();
+  },
   getSystemApps(): Promise<any> {
     return RNAndroidInstalledApps.getSystemApps();
   }

@@ -137,6 +137,42 @@ public class RNAndroidInstalledAppsModule extends ReactContextBaseJavaModule {
   }
 
   @ReactMethod
+  public void getNonSystemAppNames(final Promise promise) {
+    class OneShotTask implements Runnable {
+      private final ReactApplicationContext reactContext;
+
+      OneShotTask(final ReactApplicationContext reactContext) {
+        this.reactContext = reactContext;
+      }
+
+      public void run() {
+        try {
+          final PackageManager pm = this.reactContext.getPackageManager();
+          final List<PackageInfo> pList = pm.getInstalledPackages(0);
+          final WritableArray list = Arguments.createArray();
+          for (int i = 0; i < pList.size(); i++) {
+            final PackageInfo packageInfo = pList.get(i);
+            final WritableMap appInfo = Arguments.createMap();
+
+            if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
+              appInfo.putString("packageName", packageInfo.packageName);              
+
+              list.pushMap(appInfo);
+            }
+          }
+          promise.resolve(list);
+        } catch (final Exception ex) {
+          promise.reject(ex);
+        }
+
+      }
+    }
+    Thread t = new Thread(new OneShotTask(this.reactContext));
+    t.start();
+
+  }
+
+  @ReactMethod
   public void getSystemApps(final Promise promise) {
     class OneShotTask implements Runnable {
       private final ReactApplicationContext reactContext;

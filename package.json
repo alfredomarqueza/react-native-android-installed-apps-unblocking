@@ -1,7 +1,7 @@
 {
   "name": "react-native-android-installed-apps-unblocking",
-  "version": "1.0.3",
-  "description": "Multithreaded non blocking API to retrieve installed  apps information  using native built-ins",
+  "version": "1.0.4",
+  "description": "Multithreaded non blocking API to retrieve installed  apps information  using native built-ins UPDATED",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,9 +15,8 @@
     "applications"
   ],
   "author": {
-    "name": "Ayush Garg",
-    "email": "ayushg.iitd@gmail.com",
-    "url": "https://github.com/HydromanAG/react-native-android-installed-apps-unblocking"
+    "name": "Alfredo Marquez",
+    "url": "https://github.com/alfredomarqueza/react-native-android-installed-apps-unblocking"
   },
   "license": "MIT",
   "peerDependencies": {
@@ -26,9 +25,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HydromanAG/react-native-android-installed-apps-unblocking.git"
+    "url": "git+https://github.com/alfredomarqueza/react-native-android-installed-apps-unblocking.git"
   },
   "bugs": {
-    "url": "https://github.com/HydromanAG/react-native-android-installed-apps-unblocking/issues"
+    "url": "https://github.com/alfredomarqueza/react-native-android-installed-apps-unblocking/issues"
   }
 }
